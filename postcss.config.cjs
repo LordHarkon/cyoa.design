@@ -1,17 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const tailwindcss = require('tailwindcss');
-const autoprefixer = require('autoprefixer');
-
-const config = {
-	plugins: [
-		// Some plugins, like tailwindcss/nesting, need to run before Tailwind,
-    // TODO: Fix this...
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
-		tailwindcss(),
-		// But others, like autoprefixer, need to run after,
-		autoprefixer
-	]
+/* eslint-disable global-require */
+module.exports = {
+  plugins: [
+    // Some plugins, like tailwindcss/nesting, need to run before Tailwind,
+    require("tailwindcss"),
+    // But others, like autoprefixer, need to run after,
+    require("autoprefixer"),
+  ],
 };
-
-module.exports = config;
